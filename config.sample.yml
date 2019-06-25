@@ -1,0 +1,29 @@
+---
+
+# Credentials profile name from your ~/.aws/credentials file
+profile_name: your-profile-name
+
+# Assertions must pass before any resources are deleted
+assertions:
+  account_id: "012345678901"
+  account_alias: your-account-iam-alias
+  iam_username: your-iam-username
+
+# Resources that should not be deleted
+preserved_resources:
+  cloudformation:
+    - name-of-stack-to-save
+  ec2_key_pairs:
+    - name-of-key-to-save
+  ami:
+    - ami-01234567
+  snapshots:
+    - snap-01234567
+  cloudwatch_alarms:
+    - name-of-alarm-to-save
+  s3_buckets:
+    - name-of-bucket-to-save
+  securitygroups:
+    - sg-01234567
+  sns_topics:
+    - arn-of-topic-to-save

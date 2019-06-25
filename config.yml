@@ -1,0 +1,12 @@
+---
+
+# Assertions must pass before any resources are deleted
+assertions:
+  account_id: "xxxxx"
+
+# Resources that should not be deleted
+preserved_resources:
+  cloudformation:
+    - Security
+  s3_buckets:
+    - name-of-bucket-to-save
